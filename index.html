@@ -1,0 +1,1316 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Treinamentos corporativos sob medida para empresas que buscam mais produtividade, qualificação e resultados mensuráveis." />
+  <title>Evolua+ | Treinamento Corporativo</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #1e40af;
+      --primary-dark: #0f2f8d;
+      --accent: #f6b93b;
+      --accent-dark: #e39b12;
+      --text: #0f172a;
+      --muted: #64748b;
+      --white: #ffffff;
+      --soft: #f8fafc;
+      --shadow: 0 18px 50px rgba(15, 23, 42, 0.18);
+      --radius: 18px;
+      --container: 1200px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .btn {
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: .25s ease;
+      border-radius: 12px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(180deg, #ffd36b 0%, var(--accent) 100%);
+      color: #111827;
+      padding: 16px 28px;
+      font-size: 16px;
+      box-shadow: 0 8px 22px rgba(246,185,59,.28);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: linear-gradient(180deg, #ffd978 0%, var(--accent-dark) 100%);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,.02);
+      color: var(--white);
+      padding: 16px 28px;
+      font-size: 16px;
+      border: 1.5px solid rgba(246,185,59,.65);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,.08);
+      transform: translateY(-2px);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(6, 15, 36, .82);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .header-content {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: var(--white);
+    }
+
+    .brand img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+      border-radius: 12px;
+      background: rgba(255,255,255,.08);
+      padding: 4px;
+    }
+
+    .brand-title {
+      font-size: 22px;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -.02em;
+    }
+
+    .brand-subtitle {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: rgba(255,255,255,.68);
+      margin-top: 4px;
+      font-weight: 600;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,.82);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: #fff;
+    }
+
+    .nav-cta {
+      background: rgba(255,255,255,.12);
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      border: 1px solid rgba(255,255,255,.1);
+    }
+
+    .nav-cta:hover {
+      background: rgba(255,255,255,.18);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      color: #fff;
+      border: none;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(4,10,25,.88) 0%, rgba(6,15,36,.80) 34%, rgba(6,15,36,.44) 60%, rgba(6,15,36,.30) 100%),
+        url('assets/evolua-corporativo-capa.png') center center / cover no-repeat;
+      color: #fff;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(3,7,18,.18) 0%, rgba(3,7,18,.24) 100%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      padding: 72px 0 54px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 640px) 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-copy {
+      max-width: 640px;
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.1);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 18px;
+      color: rgba(255,255,255,.86);
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 5.2vw, 64px);
+      line-height: 1.05;
+      letter-spacing: -.04em;
+      font-weight: 800;
+      margin-bottom: 18px;
+      max-width: 12ch;
+      text-wrap: balance;
+    }
+
+    .hero h1 span {
+      color: #ffd36b;
+    }
+
+    .hero p.lead {
+      font-size: clamp(18px, 2vw, 22px);
+      color: rgba(255,255,255,.88);
+      max-width: 56ch;
+      margin-bottom: 30px;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .hero-proof {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      max-width: 640px;
+    }
+
+    .proof-card {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      backdrop-filter: blur(8px);
+      border-radius: 16px;
+      padding: 16px 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .proof-title {
+      display: block;
+      font-size: 22px;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .proof-label {
+      display: block;
+      font-size: 13px;
+      color: rgba(255,255,255,.72);
+      margin-top: 4px;
+    }
+
+    .hero-side {
+  min-height: 520px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  position: relative;
+}
+
+.hero-team {
+  width: min(760px, 100%);
+  margin-left: auto;
+  margin-right: 10px;
+  filter: drop-shadow(0 22px 50px rgba(0,0,0,.30));
+}
+
+.hero-team img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+    }
+
+    .section {
+      padding: 88px 0;
+    }
+
+    .soft {
+      background: var(--soft);
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 54px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.08;
+      margin-bottom: 14px;
+      letter-spacing: -.03em;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .section-header p {
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .grid-3,
+    .grid-4,
+    .about-grid,
+    .differentials-grid,
+    .process-grid,
+    .testimonials-grid,
+    .logos-grid,
+    .form-grid {
+      display: grid;
+      gap: 24px;
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .about-grid {
+      grid-template-columns: 1.1fr .9fr;
+      align-items: start;
+    }
+
+    .differentials-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .process-grid,
+    .testimonials-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .logos-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      align-items: stretch;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 22px;
+      padding: 28px 24px;
+      box-shadow: 0 10px 40px rgba(15,23,42,.06);
+      border: 1px solid rgba(15,23,42,.04);
+      height: 100%;
+    }
+
+    .problem-card {
+      border-top: 4px solid #ef4444;
+    }
+
+    .problem-card h3,
+    .solution-card h3,
+    .differential-card h3,
+    .process-card h3,
+    .testimonial-card h3 {
+      font-size: 21px;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      color: #0f172a;
+      font-weight: 800;
+    }
+
+    .card p {
+      color: var(--muted);
+    }
+
+    .solution-card {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+      border: 1px solid rgba(30,64,175,.08);
+      box-shadow: 0 16px 40px rgba(30,64,175,.08);
+    }
+
+    .solution-card .icon,
+    .differential-card .icon,
+    .process-card .icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      font-size: 24px;
+      margin-bottom: 16px;
+      background: linear-gradient(180deg, rgba(30,64,175,.12) 0%, rgba(246,185,59,.14) 100%);
+    }
+
+    .about-card {
+      background: #fff;
+      border-radius: 24px;
+      padding: 30px 26px;
+      box-shadow: 0 14px 40px rgba(15,23,42,.06);
+      border: 1px solid rgba(15,23,42,.05);
+      height: 100%;
+    }
+
+    .about-card h3 {
+      font-size: 26px;
+      line-height: 1.15;
+      margin-bottom: 14px;
+      color: #0f172a;
+      font-weight: 800;
+    }
+
+    .about-card p {
+      color: #475569;
+      margin-bottom: 14px;
+    }
+
+    .about-points {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .about-points li {
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: #f8fafc;
+      color: #334155;
+      font-size: 14px;
+      border: 1px solid rgba(15,23,42,.05);
+    }
+
+    .about-highlight {
+      background: linear-gradient(180deg, #0b183c 0%, #101f4b 100%);
+      color: #fff;
+      border-radius: 24px;
+      padding: 30px 26px;
+      box-shadow: 0 18px 50px rgba(15,23,42,.22);
+    }
+
+    .about-highlight h3 {
+      font-size: 28px;
+      line-height: 1.1;
+      margin-bottom: 14px;
+      font-weight: 800;
+    }
+
+    .about-highlight p {
+      color: rgba(255,255,255,.82);
+      margin-bottom: 14px;
+    }
+
+    .timeline-list {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .timeline-list li {
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.08);
+      color: rgba(255,255,255,.92);
+      font-size: 14px;
+    }
+
+    .partners {
+      background: linear-gradient(180deg, #07142f 0%, #0a193b 100%);
+      color: #fff;
+    }
+
+    .partners .section-header h2,
+    .partners .section-header p {
+      color: #fff;
+    }
+
+    .partners .section-header p {
+      opacity: .78;
+    }
+
+    .logo-box {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 22px;
+      min-height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      box-shadow: 0 14px 34px rgba(0,0,0,.18);
+      backdrop-filter: blur(6px);
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .logo-box img {
+      max-height: 82px;
+      object-fit: contain;
+      filter: saturate(1.02);
+    }
+
+    .testimonial-card {
+      background: #fff;
+      border-radius: 22px;
+      padding: 28px 24px;
+      border-top: 4px solid var(--accent);
+      box-shadow: 0 12px 36px rgba(15,23,42,.06);
+    }
+
+    .stars {
+      color: #f59e0b;
+      margin-bottom: 14px;
+      font-size: 18px;
+    }
+
+    .testimonial-card p {
+      color: #475569;
+    }
+
+    .form-section {
+      background:
+        linear-gradient(135deg, rgba(9,22,53,.96) 0%, rgba(15,31,75,.95) 100%),
+        radial-gradient(circle at top right, rgba(246,185,59,.18), transparent 30%);
+      color: #fff;
+    }
+
+    .form-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .form-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      color: rgba(255,255,255,.9);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 15px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      color: #fff;
+      font: inherit;
+      outline: none;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: rgba(255,255,255,.46);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: rgba(246,185,59,.72);
+      box-shadow: 0 0 0 3px rgba(246,185,59,.14);
+    }
+
+    .full {
+      grid-column: 1 / -1;
+    }
+
+    .form-note {
+      font-size: 13px;
+      color: rgba(255,255,255,.72);
+      text-align: center;
+      margin-top: 12px;
+    }
+
+    footer {
+      background: #040a19;
+      color: rgba(255,255,255,.72);
+      padding: 48px 0 22px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr .8fr;
+      gap: 30px;
+      margin-bottom: 26px;
+    }
+
+    footer h3 {
+      color: #fff;
+      font-size: 16px;
+      margin-bottom: 14px;
+      font-weight: 800;
+    }
+
+    footer ul {
+      list-style: none;
+    }
+
+    footer li {
+      margin-bottom: 10px;
+    }
+
+    footer a {
+      color: rgba(255,255,255,.72);
+    }
+
+    footer a:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding-top: 18px;
+      text-align: center;
+      font-size: 14px;
+      color: rgba(255,255,255,.48);
+    }
+
+    @media (max-width: 1100px) {
+      .hero-grid,
+      .grid-4,
+      .grid-3,
+      .about-grid,
+      .differentials-grid,
+      .logos-grid,
+      .process-grid,
+      .testimonials-grid,
+      .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 42px 0 30px;
+        background-position: 68% center;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .nav {
+        position: absolute;
+        top: 76px;
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 18px 20px 24px;
+        background: rgba(6,15,36,.98);
+        border-bottom: 1px solid rgba(255,255,255,.08);
+      }
+
+      .nav.open {
+        display: flex;
+      }
+
+      .nav-links {
+        width: 100%;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .hero {
+        min-height: auto;
+        background:
+          linear-gradient(180deg, rgba(4,10,25,.84) 0%, rgba(6,15,36,.72) 100%),
+          url('assets/evolua-corporativo-capa.png') center center / cover no-repeat;
+      }
+
+      .hero-grid,
+      .grid-4,
+      .grid-3,
+      .about-grid,
+      .differentials-grid,
+      .logos-grid,
+      .process-grid,
+      .testimonials-grid,
+      .form-grid,
+      .footer-grid,
+      .hero-proof {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy,
+      .hero h1 {
+        max-width: none;
+      }
+
+      .hero-side {
+        display: none;
+      }
+
+      .section {
+        padding: 72px 0;
+      }
+
+      .section-header p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container header-content">
+      <a class="brand" href="#top">
+        <img src="assets/logo-evolua.png" alt="Logo Evolua+ Profissões" onerror="this.style.display='none'">
+        <div>
+          <div class="brand-title">Evolua+</div>
+          <div class="brand-subtitle">Treinamento corporativo</div>
+        </div>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
+
+      <nav class="nav" id="mainNav">
+        <ul class="nav-links">
+          <li><a href="#quem-somos">Quem somos</a></li>
+          <li><a href="#solucao">Solução</a></li>
+          <li><a href="#treinamentos">Treinamentos</a></li>
+          <li><a href="#cursos">Cursos</a></li>
+          <li><a href="#empresas">Empresas</a></li>
+          <li><a href="https://wa.me/5565996834279?text=Olá,%20vim%20do%20site%20corporativo%20da%20Evolua%2B%20e%20quero%20mais%20informações%20sobre%20treinamentos%20corporativos." target="_blank" rel="noopener">Contato</a></li>
+        </ul>
+        <a href="https://wa.me/5565996834279?text=Olá,%20vim%20do%20site%20corporativo%20da%20Evolua%2B%20e%20quero%20solicitar%20uma%20proposta%20de%20treinamento%20para%20minha%20empresa." target="_blank" rel="noopener" class="nav-cta">Solicitar proposta</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div class="hero-kicker">Soluções corporativas em capacitação</div>
+            <h1>Treinamentos corporativos que <span>desenvolvem equipes</span> e geram resultado real.</h1>
+            <p class="lead">Capacitação prática para empresas que querem mais produtividade, padronização e crescimento profissional dos colaboradores.</p>
+
+            <div class="hero-cta">
+              <a href="https://wa.me/5565996834279?text=Olá,%20vim%20do%20site%20corporativo%20da%20Evolua%2B%20e%20quero%20solicitar%20uma%20proposta%20de%20treinamento%20para%20minha%20empresa." target="_blank" rel="noopener" class="btn btn-primary">Solicitar proposta</a>
+              <a href="https://wa.me/5565996834279?text=Olá,%20vim%20do%20site%20corporativo%20da%20Evolua%2B%20e%20quero%20falar%20com%20um%20consultor%20sobre%20treinamento%20corporativo." target="_blank" rel="noopener" class="btn btn-secondary">Falar com consultor</a>
+            </div>
+
+            <div class="hero-proof">
+              <div class="proof-card">
+                <span class="proof-title">Tecnologia</span>
+                <span class="proof-label">Treinamentos atualizados e aplicáveis</span>
+              </div>
+              <div class="proof-card">
+                <span class="proof-title">Administração</span>
+                <span class="proof-label">Capacitação para equipes operacionais e de apoio</span>
+              </div>
+              <div class="proof-card">
+                <span class="proof-title">Corporativo</span>
+                <span class="proof-label">Soluções personalizadas para empresas</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-side">
+            <div class="hero-team">
+              <img src="assets/hero-equipe-corporativa.png" alt="Equipe corporativa Evolua+" onerror="this.style.display='none'">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft" id="quem-somos">
+      <div class="container">
+        <div class="section-header">
+          <h2>Quem somos</h2>
+          <p>A Evolua+ Profissões nasceu com propósito de desenvolver pessoas, ampliar oportunidades e levar capacitação profissional de qualidade para a região e para empresas que desejam crescer com equipes mais preparadas.</p>
+        </div>
+
+        <div class="about-grid">
+          <article class="about-card">
+            <h3>Uma história construída com educação, proximidade e visão de futuro</h3>
+            <p>Somos licenciados da Evolua Educação, um dos maiores grupos educacionais do país, com milhões de alunos formados e mais de duas décadas de atuação no mercado educacional. Em Mirassol D’Oeste e região, a Evolua+ Profissões vem fortalecendo sua presença desde 2021, conectando formação prática com necessidades reais do mercado.</p>
+            <p>A operação local foi construída por Valéria Moura e Marcos Dias, unindo experiência em educação, tecnologia e desenvolvimento profissional. Essa combinação nos permite falar a linguagem do aluno e também da empresa, oferecendo capacitação com aplicação prática e foco em resultado.</p>
+
+            <ul class="about-points">
+              <li>Atuação com foco em mercado de trabalho e desenvolvimento profissional</li>
+              <li>Experiência com treinamentos, consultorias e relacionamento com empresas da região</li>
+              <li>Portfólio amplo em tecnologia, administração, produtividade e outras áreas estratégicas</li>
+              <li>Polo oficial da Universidade Cruzeiro do Sul Virtual com oferta de graduação, técnico e pós-graduação</li>
+            </ul>
+          </article>
+
+          <aside class="about-highlight">
+            <h3>Nosso objetivo no corporativo</h3>
+            <p>Levar para as empresas uma solução de treinamento que una acessibilidade, praticidade e percepção real de valor para os colaboradores.</p>
+            <p>Não se trata apenas de oferecer cursos, mas de apoiar organizações que querem fortalecer processos, atualizar equipes e criar uma cultura de crescimento contínuo.</p>
+
+            <ul class="timeline-list">
+              <li><strong>Base educacional forte:</strong> conexão com um grande grupo educacional e metodologia focada em mercado.</li>
+              <li><strong>Atuação regional:</strong> presença em Mirassol D’Oeste e relacionamento com empresas e operações de diferentes segmentos.</li>
+              <li><strong>Visão corporativa:</strong> treinamentos pensados para produtividade, padronização e desenvolvimento profissional.</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft">
+      <div class="container">
+        <div class="section-header">
+          <h2>Os desafios que muitas empresas enfrentam hoje</h2>
+          <p>Treinar equipes deixou de ser diferencial e passou a ser necessidade para empresas que querem crescer com consistência.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card problem-card">
+            <h3>Produtividade abaixo do potencial</h3>
+            <p>Sem capacitação contínua, a operação perde ritmo, surgem falhas de execução e o time entrega menos do que poderia.</p>
+          </article>
+          <article class="card problem-card">
+            <h3>Dificuldade para padronizar processos</h3>
+            <p>Quando o conhecimento não é nivelado, cada colaborador executa de um jeito e isso afeta qualidade, tempo e resultado.</p>
+          </article>
+          <article class="card problem-card">
+            <h3>Mercado cada vez mais exigente</h3>
+            <p>Empresas precisam de equipes atualizadas em tecnologia, produtividade e rotinas corporativas para se manterem competitivas.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="solucao">
+      <div class="container">
+        <div class="section-header">
+          <h2>A solução Evolua+ para o ambiente corporativo</h2>
+          <p>Uma proposta pensada para empresas que desejam qualificar colaboradores, fortalecer a cultura de desenvolvimento e elevar a performance da equipe.</p>
+        </div>
+
+        <div class="grid-4">
+          <article class="card solution-card">
+            <div class="icon">🎯</div>
+            <h3>Treinamentos direcionados</h3>
+            <p>Conteúdos alinhados às necessidades da empresa, com foco em aplicação prática e desenvolvimento real do time.</p>
+          </article>
+          <article class="card solution-card">
+            <div class="icon">📚</div>
+            <h3>Portfólio diversificado</h3>
+            <p>Cursos em tecnologia, administração, produtividade, liderança e outras áreas importantes para o ambiente empresarial.</p>
+          </article>
+          <article class="card solution-card">
+            <div class="icon">🏅</div>
+            <h3>Certificação para os colaboradores</h3>
+            <p>Os cursos concluídos dentro do período contratado contam com certificado, agregando valor para empresa e equipe.</p>
+          </article>
+          <article class="card solution-card">
+            <div class="icon">🤝</div>
+            <h3>Modelo corporativo flexível</h3>
+            <p>Atendimento pensado para parcerias com empresas, ajustando escopo, formato e foco conforme o perfil da operação.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft" id="treinamentos">
+      <div class="container">
+        <div class="section-header">
+          <h2>Áreas de treinamento que podem impulsionar sua equipe</h2>
+          <p>Selecionamos frentes estratégicas do portfólio da Evolua+ para atender empresas de diferentes segmentos e portes.</p>
+        </div>
+
+        <div class="grid-4">
+          <article class="card">
+            <h3>Tecnologia e produtividade</h3>
+            <p>Treinamentos que fortalecem a rotina digital, organização e desempenho operacional do time.</p>
+          </article>
+          <article class="card">
+            <h3>Administração e apoio corporativo</h3>
+            <p>Formações úteis para setores administrativos, financeiro, atendimento e suporte à operação.</p>
+          </article>
+          <article class="card">
+            <h3>Vendas, marketing e atendimento</h3>
+            <p>Capacitação voltada para relacionamento com cliente, vendas e posicionamento comercial.</p>
+          </article>
+          <article class="card">
+            <h3>Desenvolvimento profissional</h3>
+            <p>Cursos para elevar maturidade profissional, comprometimento e desempenho em equipe.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="cursos">
+      <div class="container">
+        <div class="section-header">
+          <h2>Nossos cursos por área</h2>
+          <p>Organizamos o portfólio de forma objetiva para facilitar a leitura e ajudar sua empresa a identificar rapidamente as áreas mais estratégicas para capacitação da equipe.</p>
+        </div>
+
+        <div class="about-grid">
+          <article class="about-card">
+            <h3>Tecnologia e produtividade</h3>
+            <p>Treinamentos voltados ao uso de ferramentas digitais, organização da rotina operacional e ganho de desempenho em atividades administrativas e corporativas.</p>
+            <ul class="about-points">
+              <li>Operador de Informática Essencial</li>
+              <li>Operador de Informática Avançada</li>
+              <li>Analista Power BI</li>
+              <li>Inteligência Artificial – Ferramentas e Aplicações</li>
+              <li>Programador de Computador Avançado</li>
+              <li>Desenvolvedor Web</li>
+              <li>Desenvolvedor de Aplicativos Mobile</li>
+              <li>Manutenção de Computadores e Redes</li>
+            </ul>
+            <a href="https://wa.me/5565996834279?text=Olá,%20vim%20do%20site%20corporativo%20da%20Evolua%2B%20e%20quero%20mais%20informações%20sobre%20os%20cursos%20da%20área%20de%20Tecnologia%20e%20Produtividade%20para%20minha%20empresa." target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:18px;">Falar sobre esta área</a>
+          </article>
+
+          <article class="about-card">
+            <h3>Administração e gestão</h3>
+            <p>Formações para fortalecer setores administrativos, financeiros, operacionais e de apoio, contribuindo para mais organização, eficiência e preparo profissional.</p>
+            <ul class="about-points">
+              <li>Gestão Empresarial</li>
+              <li>Assistente Administrativo</li>
+              <li>Assistente de Recursos Humanos e Departamento Pessoal</li>
+              <li>Gestão Financeira</li>
+              <li>Jovem Aprendiz Administrativo</li>
+              <li>Operador de Caixa</li>
+              <li>Atendente de Farmácia</li>
+              <li>Supervisor de Vendas</li>
+            </ul>
+            <a href="https://wa.me/5565996834279?text=Olá,%20vim%20do%20site%20corporativo%20da%20Evolua%2B%20e%20quero%20mais%20informações%20sobre%20os%20cursos%20da%20área%20de%20Administração%20e%20Gestão%20para%20minha%20empresa." target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:18px;">Falar sobre esta área</a>
+          </article>
+
+          <article class="about-card">
+            <h3>Comercial, atendimento e marketing</h3>
+            <p>Cursos que podem contribuir para melhorar relacionamento com clientes, comunicação, presença digital, vendas e postura profissional da equipe.</p>
+            <ul class="about-points">
+              <li>Marketing Digital</li>
+              <li>Supervisor de Vendas</li>
+              <li>Excelência no Atendimento</li>
+              <li>Agente de Vendas</li>
+              <li>Operador de Telemarketing</li>
+              <li>Google Ferramentas de Produtividade</li>
+              <li>Google Documentos, Planilhas e Apresentações</li>
+            </ul>
+            <a href="https://wa.me/5565996834279?text=Olá,%20vim%20do%20site%20corporativo%20da%20Evolua%2B%20e%20quero%20mais%20informações%20sobre%20os%20cursos%20da%20área%20de%20Comercial,%20Atendimento%20e%20Marketing%20para%20minha%20empresa." target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:18px;">Falar sobre esta área</a>
+          </article>
+
+          <article class="about-card">
+            <h3>Criatividade, mídia e inovação</h3>
+            <p>Capacitações que ajudam a empresa a desenvolver criatividade, comunicação visual, produção de conteúdo e uso de ferramentas inovadoras no dia a dia.</p>
+            <ul class="about-points">
+              <li>Designer Gráfico</li>
+              <li>Video Maker</li>
+              <li>YouTuber</li>
+              <li>Desenvolvedor de Games 2D e 3D</li>
+              <li>Informática Kids</li>
+              <li>Melhor Idade Conectada</li>
+            </ul>
+            <a href="https://wa.me/5565996834279?text=Olá,%20vim%20do%20site%20corporativo%20da%20Evolua%2B%20e%20quero%20mais%20informações%20sobre%20os%20cursos%20da%20área%20de%20Criatividade,%20Mídia%20e%20Inovação%20para%20minha%20empresa." target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:18px;">Falar sobre esta área</a>
+          </article>
+
+          <article class="about-card">
+            <h3>Técnico por Competência</h3>
+            <p>Solução ideal para profissionais que já possuem experiência prática e buscam certificação técnica em sua área de atuação, agregando valor profissional e fortalecendo a qualificação da equipe dentro da empresa.</p>
+            <ul class="about-points">
+              <li>Administração</li>
+              <li>Agronegócio</li>
+              <li>Agropecuária</li>
+              <li>Análises Clínicas</li>
+              <li>Automação Industrial</li>
+              <li>Desenvolvimento de Sistemas</li>
+              <li>Eletromecânica</li>
+              <li>Eletrotécnica</li>
+              <li>Informática</li>
+              <li>Logística</li>
+              <li>Mecânica</li>
+              <li>Química</li>
+              <li>Recursos Humanos</li>
+              <li>Segurança do Trabalho</li>
+              <li>Secretariado</li>
+              <li>Marketing</li>
+              <li>Vendas</li>
+            </ul>
+            <a href="https://wa.me/5565996834279?text=Olá,%20vim%20do%20site%20corporativo%20da%20Evolua%2B%20e%20quero%20mais%20informações%20sobre%20Técnico%20por%20Competência%20para%20minha%20empresa." target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:18px;">Falar sobre esta área</a>
+          </article>
+
+          <article class="about-card">
+            <h3>Provão Ensino Fundamental e Médio</h3>
+            <p>Uma alternativa importante para empresas que desejam incentivar o crescimento profissional de colaboradores que ainda precisam concluir o Ensino Fundamental ou Ensino Médio.</p>
+            <ul class="about-points">
+              <li>Provão Ensino Fundamental</li>
+              <li>Provão Ensino Médio</li>
+            </ul>
+            <a href="https://wa.me/5565996834279?text=Olá,%20vim%20do%20site%20corporativo%20da%20Evolua%2B%20e%20quero%20mais%20informações%20sobre%20o%20Provão%20Ensino%20Fundamental%20e%20Médio%20para%20minha%20empresa." target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:18px;">Falar sobre esta área</a>
+          </article>
+        </div>
+
+        <div class="section-header" style="margin-top:56px; margin-bottom:28px;">
+          <h2 style="font-size:34px;">Quer montar uma proposta com base no perfil da sua empresa?</h2>
+          <p>Você pode solicitar um atendimento direto e receber orientação sobre as áreas e treinamentos mais adequados para sua equipe.</p>
+        </div>
+
+        <div class="form-wrap" style="max-width:760px;">
+          <form onsubmit="return false;">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="curso_nome_empresa">Empresa</label>
+                <input type="text" id="curso_nome_empresa" placeholder="Nome da empresa">
+              </div>
+              <div class="form-group">
+                <label for="curso_area_interesse">Área de interesse</label>
+                <select id="curso_area_interesse">
+                  <option value="">Selecione</option>
+                  <option>Tecnologia e produtividade</option>
+                  <option>Administração e gestão</option>
+                  <option>Comercial, atendimento e marketing</option>
+                  <option>Criatividade, mídia e inovação</option>
+                  <option>Técnico por Competência</option>
+                  <option>Provão Ensino Fundamental e Médio</option>
+                  <option>Treinamento corporativo personalizado</option>
+                </select>
+              </div>
+              <div class="form-group full">
+                <label for="curso_mensagem">O que sua empresa busca?</label>
+                <textarea id="curso_mensagem" rows="4" placeholder="Descreva rapidamente o tipo de treinamento ou necessidade da equipe."></textarea>
+              </div>
+              <div class="form-group full">
+                <a href="https://wa.me/5565996834279?text=Olá,%20vim%20do%20site%20corporativo%20da%20Evolua%2B%20pela%20aba%20de%20cursos%20e%20quero%20montar%20uma%20proposta%20para%20minha%20empresa." target="_blank" rel="noopener" class="btn btn-primary" style="width:100%;">Solicitar proposta pelo WhatsApp</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section partners" id="empresas">
+      <div class="container">
+        <div class="section-header">
+          <h2>Empresas que já contam com nossa atuação</h2>
+          <p>Experiência com empresas da região e do setor produtivo, reforçando confiança e presença no ambiente corporativo.</p>
+        </div>
+
+        <div class="logos-grid">
+          <div class="logo-box">
+            <img src="assets/logo-nutripura.png" alt="Nutripura" onerror="this.parentElement.innerHTML='Nutripura'">
+          </div>
+          <div class="logo-box">
+            <img src="assets/logo-ruralista.png" alt="A Ruralista" onerror="this.parentElement.innerHTML='A Ruralista'">
+          </div>
+          <div class="logo-box">
+            <img src="assets/logo-cananova.png" alt="Agropecuária Cananova" onerror="this.parentElement.innerHTML='Agropecuária Cananova'">
+          </div>
+          <div class="logo-box">
+            <img src="assets/logo-novo-milenio.png" alt="Novo Milênio" onerror="this.parentElement.innerHTML='Novo Milênio'">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft">
+      <div class="container">
+        <div class="section-header">
+          <h2>Por que a proposta corporativa da Evolua+ se destaca</h2>
+          <p>Mais do que vender cursos, a ideia é apoiar empresas na construção de equipes mais preparadas para crescer.</p>
+        </div>
+
+        <div class="differentials-grid">
+          <article class="card differential-card">
+            <div class="icon">🧠</div>
+            <h3>Aprendizado com aplicação prática</h3>
+            <p>Os treinamentos são pensados para refletir situações do dia a dia, facilitando absorção e uso no trabalho.</p>
+          </article>
+          <article class="card differential-card">
+            <div class="icon">📈</div>
+            <h3>Foco em produtividade</h3>
+            <p>Capacitar bem a equipe contribui para melhor organização, mais autonomia e melhores entregas.</p>
+          </article>
+          <article class="card differential-card">
+            <div class="icon">🛠️</div>
+            <h3>Versatilidade de áreas</h3>
+            <p>A empresa pode estruturar treinamentos por setor, perfil de colaborador ou objetivos específicos.</p>
+          </article>
+          <article class="card differential-card">
+            <div class="icon">⭐</div>
+            <h3>Percepção de valor para o colaborador</h3>
+            <p>Quando a empresa investe em desenvolvimento, fortalece engajamento, pertencimento e valorização interna.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Como funciona o atendimento corporativo</h2>
+          <p>Uma jornada simples para entender a necessidade da empresa e montar uma proposta aderente ao seu momento.</p>
+        </div>
+
+        <div class="process-grid">
+          <article class="card process-card">
+            <div class="icon">1</div>
+            <h3>Entendemos seu cenário</h3>
+            <p>Você informa o perfil da empresa, os setores envolvidos e o tipo de resultado que deseja alcançar com treinamento.</p>
+          </article>
+          <article class="card process-card">
+            <div class="icon">2</div>
+            <h3>Montamos uma proposta</h3>
+            <p>Estruturamos uma solução corporativa com foco nas áreas mais relevantes para sua equipe e seu orçamento.</p>
+          </article>
+          <article class="card process-card">
+            <div class="icon">3</div>
+            <h3>Iniciamos a parceria</h3>
+            <p>Com a proposta aprovada, a empresa passa a contar com a Evolua+ como parceira em capacitação profissional.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft">
+      <div class="container">
+        <div class="section-header">
+          <h2>Percepção de valor que fortalece a decisão de contratação</h2>
+          <p>Esses textos podem ser substituídos depois por depoimentos reais de clientes, gestores ou empresas atendidas.</p>
+        </div>
+
+        <div class="testimonials-grid">
+          <article class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <h3>Proposta clara e profissional</h3>
+            <p>“A apresentação transmite confiança e mostra uma empresa preparada para atender o ambiente corporativo com seriedade.”</p>
+          </article>
+          <article class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <h3>Mais valor para o RH e gestão</h3>
+            <p>“Uma solução assim ajuda a estruturar melhor a capacitação da equipe e torna a decisão de investimento muito mais segura.”</p>
+          </article>
+          <article class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <h3>Imagem forte para gerar leads</h3>
+            <p>“O posicionamento visual e a proposta comercial fortalecem a autoridade da marca na frente de empresas parceiras.”</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section form-section" id="contato">
+      <div class="container">
+        <div class="section-header">
+          <h2 style="color:#fff;">Solicite uma proposta para sua empresa</h2>
+          <p style="color:rgba(255,255,255,.76);">Preencha os dados abaixo para receber um contato comercial e montar uma solução de treinamento corporativo.</p>
+        </div>
+
+        <div class="form-wrap">
+          <form onsubmit="return false;">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="nome">Seu nome *</label>
+                <input type="text" id="nome" placeholder="Ex: João Silva">
+              </div>
+              <div class="form-group">
+                <label for="email">E-mail *</label>
+                <input type="email" id="email" placeholder="seu@email.com">
+              </div>
+              <div class="form-group">
+                <label for="empresa">Empresa *</label>
+                <input type="text" id="empresa" placeholder="Nome da empresa">
+              </div>
+              <div class="form-group">
+                <label for="telefone">WhatsApp *</label>
+                <input type="tel" id="telefone" placeholder="(65) 99999-9999">
+              </div>
+              <div class="form-group">
+                <label for="colaboradores">Número de colaboradores *</label>
+                <select id="colaboradores">
+                  <option value="">Selecione</option>
+                  <option>Até 20 pessoas</option>
+                  <option>21 a 50 pessoas</option>
+                  <option>51 a 100 pessoas</option>
+                  <option>101 a 250 pessoas</option>
+                  <option>Acima de 250 pessoas</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="interesse">Área de interesse *</label>
+                <select id="interesse">
+                  <option value="">Selecione</option>
+                  <option>Tecnologia e produtividade</option>
+                  <option>Administração</option>
+                  <option>Vendas e atendimento</option>
+                  <option>Técnico por Competência</option>
+                  <option>Provão Ensino Fundamental e Médio</option>
+                  <option>Treinamento personalizado</option>
+                </select>
+              </div>
+              <div class="form-group full">
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" rows="5" placeholder="Conte um pouco sobre o perfil da equipe e o que sua empresa busca."></textarea>
+              </div>
+              <div class="form-group full">
+                <a href="https://wa.me/5565996834279?text=Olá,%20vim%20do%20site%20corporativo%20da%20Evolua%2B%20e%20quero%20solicitar%20um%20orçamento%20de%20treinamento%20para%20minha%20empresa." target="_blank" rel="noopener" class="btn btn-primary" style="width:100%;">Enviar proposta pelo WhatsApp</a>
+                <p class="form-note">Os botões principais já estão direcionando para o WhatsApp da escola com mensagem identificando origem no site corporativo.</p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3>Evolua+ Profissões</h3>
+          <p>Treinamentos corporativos com foco em produtividade, qualificação profissional e fortalecimento das equipes nas empresas.</p>
+        </div>
+        <div>
+          <h3>Navegação</h3>
+          <ul>
+            <li><a href="#quem-somos">Quem somos</a></li>
+            <li><a href="#solucao">Solução</a></li>
+            <li><a href="#treinamentos">Treinamentos</a></li>
+            <li><a href="#cursos">Cursos</a></li>
+            <li><a href="#empresas">Empresas</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Contato</h3>
+          <ul>
+            <li><a href="https://wa.me/5565996834279?text=Olá,%20vim%20do%20site%20corporativo%20da%20Evolua%2B%20e%20quero%20mais%20informações%20sobre%20treinamentos%20corporativos." target="_blank" rel="noopener">WhatsApp comercial</a></li>
+            <li><a href="mailto:evoluamaisprofissoes@gmail.com">evoluamaisprofissoes@gmail.com</a></li>
+            <li><a href="https://wa.me/5565996834279?text=Olá,%20vim%20do%20site%20corporativo%20da%20Evolua%2B%20e%20quero%20solicitar%20uma%20proposta%20de%20treinamento%20para%20minha%20empresa." target="_blank" rel="noopener">Solicitar proposta</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">© 2026 Evolua+ Profissões. Todos os direitos reservados.</div>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const mainNav = document.getElementById('mainNav');
+
+    if (menuToggle && mainNav) {
+      menuToggle.addEventListener('click', () => {
+        mainNav.classList.toggle('open');
+      });
+
+      mainNav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mainNav.classList.remove('open');
+        });
+      });
+    }
+  </script>
+
+</body>
+</html>
